@@ -2,8 +2,9 @@
 """
 Created on Wed Jun 15 14:50:49 2016
 
-@author: SRINIVAS
+@author: PRANAV
 """
+import matplotlib.pyplot as plt
 a=input('enter a sequence')
 pi=[]
 a=a.split(',')
@@ -49,7 +50,7 @@ def oppi(pi,final,somthing,number,lensomthing,loop):
     somthing.pop()
 # end function    
     
-    
+
 while len(a)>loopy:
     loopy=loopy+1
     if loopy%2!=0:
@@ -57,3 +58,5 @@ while len(a)>loopy:
     else:
         oppi(pi,final,somthing,number,lensomthing,loop)
 print(final)
+plt.plot(range(len(final)),final)
+plt.show()
