@@ -1,8 +1,9 @@
+
 # -*- coding: utf-8 -*-
 """
 Created on Thu Jul 28 18:24:35 2016
 
-@author: SRINIVAS
+@author: PRANAV
 """
 
 import math

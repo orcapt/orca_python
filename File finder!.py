@@ -2,7 +2,7 @@
 """
 Created on Sun Sep 25 15:13:23 2016
 
-@author: SRINIVAS
+@author: PRANAV
 """
 from os import listdir
 in1=input('What do you think you want in your file?')
