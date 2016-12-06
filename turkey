@@ -1,0 +1,40 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Sun Nov 20 19:41:47 2016
+
+@author: Pranavtadepalli
+"""
+
+from PIL import Image
+im = Image.open("turkey.png")
+from bs4 import BeautifulSoup as soup
+import urllib.request
+import webbrowser
+import numpy
+abc=list('turkeyTURKEY')
+"""
+raw=urllib.request.urlopen(input('URL\n')).read()
+raw=soup(raw)
+raw=str(raw)
+r=soup.find_all('p')
+"""
+filey=open('turkey.txt','a')
+r='this is about donald trump'
+listy=[]
+for elem in list(r):
+    if elem in abc:
+        listy.append(1)
+    else:
+        listy.append(0)
+filey.write(str(listy.count(1)/len(listy))+'\n')
+filey.close()
+filey=open('turkey.txt','r')
+file=filey.read()
+print(numpy.mean(list(map(float,file.split('\n')[0:-1]))))
+filey.close()
+
+for elem in range(2400):
+    for i in range(2000):
+        print(im.readpixel(elem,i))
+        

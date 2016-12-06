@@ -1,0 +1,21 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Mon Nov 14 08:44:32 2016
+
+@author: Pranavtadepalli
+"""
+
+a=[]
+def primes(number):
+   me=range(2,number)
+   he=True
+   for elem in me:
+       if number%elem==0:
+           he=False
+   return(he)
+for elem in range(1,int(5160/2)):
+    if primes(elem):
+        if 5160%elem==0:
+            a.append(elem)
+print(max(a))

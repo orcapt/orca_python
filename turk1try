@@ -1,0 +1,66 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Sat Nov 26 12:03:29 2016
+
+@author: Pranavtadepalli
+"""
+
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Sat Nov 26 09:14:21 2016
+
+@author: Pranavtadepalli
+"""
+
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Fri Nov 25 10:22:14 2016
+
+@author: Pranavtadepalli
+"""
+
+#from PIL import Image, ImageTk
+import tkinter
+import time
+from tkinter import messagebox
+import random
+t=0
+#a=time.time()
+a=0
+def funny():
+    global t
+    global a
+
+
+    global img1
+    hee=eval('a'+random.choice(['0','1','2','3'])+random.choice(['0','1','2','3']))
+    hee.config(image=img1)
+    t=t+1
+    if t==1:
+        a=time.time()
+    if t==16:
+        b=time.time()
+        print(b-a)
+        messagebox.showinfo( "Your Done!", "Your score is " + str(b-a))
+        time.sleep(0.01)
+        root.destroy()
+
+listy=['funny','funny1','funny2','funny3']
+root = tkinter.Toplevel()
+#root.geometry('{}x{}'.format(1000, 1000))
+img = tkinter.PhotoImage(file='dead.gif')
+img1 = tkinter.PhotoImage(file='really.gif')
+tee=-1
+
+for r in range(4):
+    for c in range(4):
+        tee=tee+1
+        exec('a'+str(r)+str(c)+'=tkinter.Button(root, image=img, command=funny)')
+        exec('a'+str(r)+str(c)+'.grid(column=c,row=r)')
+
+
+tkinter.mainloop()
+

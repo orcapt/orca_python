@@ -1,0 +1,42 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Fri Nov 18 16:30:51 2016
+
+@author: Pranavtadepalli
+
+
+def split(i):
+    if i>1:
+        return([i,i-1])
+    else:
+        return [i]
+for e in range(5):
+    f=split(e)
+    while list(set(f))!=[1]:
+        for elem in f:
+"""
+def two(two):
+    big=two
+    listy=[]
+    while two!=1 and two!=0:
+        two=two-1
+        listy.append([two,big-two])
+    return(listy[0:round(len(listy)/2)])
+print(two(10))
+for elem in range(1,6):
+    
+"""
+for elem in range(1,5):
+    listy=two(elem)
+    
+    for el in listy:
+        for e in el:
+            try:
+                listy.append([two(e),5-e])
+                
+            except:
+                pass
+print(listy)
+"""
+    

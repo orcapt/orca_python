@@ -8,11 +8,11 @@ Created on Sun Jul 24 17:45:21 2016
 import sounddevice as sd
 import numpy as np
 import math
-import subprocess
-import os
-import wavio
+#import subprocess
+#import os
+#import wavio
 import pygame
-import time
+#import time
 import wave
 import numpy
 fs= 44100

@@ -1,0 +1,51 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Sat Nov 26 09:14:21 2016
+
+@author: Pranavtadepalli
+"""
+
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Fri Nov 25 10:22:14 2016
+
+@author: Pranavtadepalli
+"""
+
+#from PIL import Image, ImageTk
+import tkinter
+import time
+from tkinter import messagebox
+t=0
+#a=time.time()
+a=0
+def funny(w):
+    global t
+    global a
+    global img1
+
+    eval(w).config(image=img1)
+    t=t+1
+    if t==1:
+        a=time.time()
+    if t==16:
+        b=time.time()
+        print(b-a)
+        messagebox.showinfo( "Your Done!", "Your score is " + str(b-a))
+        time.sleep(0.01)
+        root.destroy()
+
+root = tkinter.Toplevel()
+#root.geometry('{}x{}'.format(1000, 1000))
+img = tkinter.PhotoImage(file='dead.gif')
+img1 = tkinter.PhotoImage(file='really.gif')
+for r in range(4):
+    for c in range(4):
+        exec(str(r)+str(c)+' = tkinter.Button(root, image=img, command=lambda: funny('+str(r)+str(c)+'))')
+        eval(str(r)+str(c)).grid(column=c,row=r)
+
+
+tkinter.mainloop()
+

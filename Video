@@ -1,0 +1,20 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Fri Nov 25 09:14:25 2016
+
+@author: Pranavtadepalli
+"""
+
+import os
+from PIL import Image
+"""
+im=Image.open('turkey.png')
+for elem in range(1,20):
+    im.save('/Users/Pranavtadepalli/vid/'+'pic'+'0'*(3-len(str(elem)))+str(elem),'PNG')
+"""
+os.system('cd /Users/Pranavtadepalli/vid')
+os.system('ffmpeg -r 60 -f image2 -s 2400x2000 -i pic%04d.png -vcodec libx264 -crf 25  -pix_fmt RGB8 test.mp4')
+os.system('/Users/Pranavtadepalli/Downloads/ffmpeg-3.2.tar.bz2 -i pic%04d.png -c:v mpeg4 -qscale:v 5 -r 20 -b:v 9600k movie.mp4')
+
+os.system('ffmpeg -i "/Users/Pranavtadepalli/vid" -f image2 C:\Testing\pic%04d.png')

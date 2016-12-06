@@ -24,9 +24,7 @@ def Read(linenumber,file):
           ile.close()
           return lines[linenumber-1]
 v=Read(30,'Class to write to the same file.py')
-Write(30,'Class to write to the same file.py',int(v)+1)
+Write(30,'Class to write to the same file.py',str(int(v)+1))
 print(Read(30,'Class to write to the same file.py'))
 
-)
-
-25
+26

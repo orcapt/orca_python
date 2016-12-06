@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+ # -*- coding: utf-8 -*-
 """
 Created on Thu Sep  1 18:26:31 2016
 
@@ -9,7 +9,7 @@ from bs4 import BeautifulSoup as soup
 from random import choice
 import urllib.request
 from PyDictionary import PyDictionary
-
+import webbrowser
 dictionary=PyDictionary()
 abc=list('qwertyuiopasdfghjklzxcvbnm')
 raw=urllib.request.urlopen('https://www.brainpop.com/science/seeall/').read()
@@ -23,8 +23,17 @@ for elem in raw:
         tre=tr.strip('"')
         listy.append(tre)
 listy=listy[3:-1]
+listy.append('-logy')
+listy.append('Scientists') 
+filere=open('catogories.txt','r')
+for lee in filere.read().split('\n'):
+    listy.append(lee)
+filere.close()
+for elem in listy:
+    print(elem)
+print(len(listy))
 fin2=[choice(abc),choice(abc),choice(abc),choice(abc),choice(abc)]
-if len(set(fin2))!=5:
+while len(set(fin2))!=5:
     fin2=[choice(abc),choice(abc),choice(abc),choice(abc),choice(abc)]
 fin1=[' ',choice(listy),choice(listy),choice(listy),choice(listy),choice(listy)]
 
@@ -35,3 +44,6 @@ file.write(','.join(fin1))
 for elem in fin2:
     file.write('\n')
     file.write(elem+',')
+
+
+webbrowser.open('/Users/Pranavtadepalli/science.csv')

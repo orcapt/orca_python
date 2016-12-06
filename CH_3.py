@@ -2492,7 +2492,7 @@ for l in t:
         new.append('.')
 new=''.join(new)
 new=new.split(',...,...,')
-er=len(new[1])+len(new[0])+9+9+len(new[2])+9+len(new[3])+len(new[4])+9+len(new[5])+9+len(new[6])+9+len(new[7])+9+len(new[8])+9+len(new[9])+9+len(new[10])
+er=len(new[1])+len(new[0])+9+9+len(new[2])+9+len(new[3])+len(new[4])+9+len(new[5])+9+len(new[6])+9+len(new[7])+9+len(new[8])+9+len(new[9]))
 print(t[er-1:er+30])
 #linkedlist
 """

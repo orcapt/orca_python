@@ -9,7 +9,7 @@ from bs4 import BeautifulSoup as soup
 import webbrowser
 from gtts import gTTS
 import speech_recognition as sr
-import sys
+#import sys
 import time
 import urllib.request
 tts = gTTS(text="I'm listening...", lang='en')
@@ -31,6 +31,7 @@ except:
     webbrowser.open(r"C:\Users\SRINIVAS\Documents\Python Scripts\hl.mp3")
     time.sleep(2)
     try:
+
         with sr.Microphone() as source:                # use the default microphone as the audio source
                     audio = r.listen(source)
                     
@@ -39,7 +40,9 @@ except:
         tts = gTTS(text="I'm giving up on you", lang='en')
         tts.save("hl.mp3")
         webbrowser.open(r"C:\Users\SRINIVAS\Documents\Python Scripts\hl.mp3")
-        sys.exit(1)
+        #sys.exit(1)
+        quit()
+
 print('Question:',b)
 
 inputs=b

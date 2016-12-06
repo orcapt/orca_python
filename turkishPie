@@ -1,0 +1,38 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Fri Nov 25 14:18:06 2016
+
+@author: Pranavtadepalli
+"""
+
+
+
+
+
+#from PIL import Image, ImageTk
+import tkinter
+
+#import random
+#import time
+
+#images=[tkinter.PhotoImage(file="turkish.gif"),tkinter.PhotoImage(file="turkey.gif")]
+#"turkish.gif",'turkey.gif','turker.gif',
+#a=time.time()
+
+root = tkinter.Toplevel()
+#root.geometry('{}x{}'.format(random.randint(500,1500), random.randint(500,1500)))
+root.geometry('{}x{}'.format(1000,1000))
+
+for r in range(2):
+
+    for c in range(2):
+        img = tkinter.PhotoImage('dead.gif')
+        #Tkinter.Label(root, text='R%s/C%s'%(r,c),
+        #   borderwidth=1 ).grid(row=r,column=c)
+        button = tkinter.Button(root, image=img, borderwidth=1)
+        button.grid(row=r,column=c)
+tkinter.mainloop()
+
+#b=time.time()
+#print('Your score is ', 20-(b-a))

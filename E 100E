@@ -1,0 +1,54 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Fri Nov 18 20:03:55 2016
+
+@author: Pranavtadepalli
+"""
+
+def two(numb):
+    return [[elem,numb-elem] for elem in range(numb)][1:-1][0:round(.5*numb)]
+            
+            
+def l(lists,num):
+    for elem in lists:
+        a=two(elem[num])
+#print(two(10))
+"""
+def l(lists,lorr):
+    returns=[]
+    print(lists)
+    for e in lists:
+        print(e)
+        r=e
+        del r[lorr]
+
+        print(e)
+        if e[lorr]==1:
+            returns.append(e)
+        elif e[lorr]==2:
+            fe=[elem for elem in r]
+            fe.append([1,1])
+            returns.append(fe)
+        else:
+            
+            fe=[elem for elem in r]
+            fe.append(two(e[lorr]))
+            returns.append(fe)
+    return(returns)
+
+print(l([[1, 5], [2, 4], [10, 3]],1))
+"""   
+"""     
+listy=[]
+for elem in range(1,6):
+    l1=[]
+    while listy
+    a=two(elem)
+    
+"""
+
+    
+    
+    
+#print(two(6))
