@@ -2,7 +2,7 @@
 """
 Created on Wed Jun 22 13:27:49 2016
 
-@author: Orcapt
+@author: Orcat
 """
 
 from bs4 import BeautifulSoup as soup

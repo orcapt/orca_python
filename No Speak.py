@@ -55,3 +55,19 @@ print('\n')
 print(raw.split('Hi there, how are you? and You')[1][1:1000])
 #print(raw)
 """
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

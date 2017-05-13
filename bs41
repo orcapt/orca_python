@@ -1,0 +1,47 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Fri Jan  6 14:47:58 2017
+
+@author: Pranavtadepalli
+"""
+
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
+if 1==1:
+        from bs4 import BeautifulSoup as soup
+        import urllib.request
+        result="is this vegan"
+        b=result
+        inputs=b
+        inputs=inputs.split(' ')
+        t='https://answers.search.yahoo.com/search;_ylt=AwrXoCE45N5XRCcAYodPmolQ?p='
+        for elem in inputs:
+            t=t+'+'+elem
+        t=t+'&fr2=sb-top&fr=uh3_answers_vert_gs&type=2button'
+        #print(t)
+        #raw=urllib.request.urlopen('https://answers.search.yahoo.com/search;_ylt=AwrXoCE45N5XRCcAYodPmolQ?p=hi+fun+people&fr2=sb-top&fr=uh3_answers_vert_gs&type=2button').read()
+        raw=urllib.request.urlopen(t).read()
+        raw=soup(raw)
+        t=raw.find_all('a',href=True)
+        t=str(t)
+        listy=[]
+        for elem in t.split('href='):
+            if len(elem.split('https://answers.yahoo.com/question/index'))>1:
+                listy.append(elem.split('"')[1])
+        #print(listy[0])
+        if len(listy)==0:
+            ft='I do not know'
+        else:
+            raw=urllib.request.urlopen(listy[0]).read()
+            raw=soup(raw)
+            #raw=str(raw)
+            #print(soup.get_text(raw)[1:100000])
+            t=raw.find_all(class_='ya-q-full-text')
+            if t[0]['class']=='ya-q-full-text':
+                ft=raw.find_all(class_='ya-q-full-text')[0].get_text()
+            else:
+                ft=raw.find_all(class_='ya-q-full-text')[1].get_text()
+
+        print(ft)

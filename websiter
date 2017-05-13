@@ -1,0 +1,31 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Mon Dec 19 18:52:26 2016
+
+@author: Pranavtadepalli
+"""
+
+import os
+import subprocess
+import sys
+import time
+while True:
+    listy1=[]
+    listy2=[]
+    listy3=[]
+    for elem in os.listdir('/Users/Pranavtadepalli/Documents/Website2/photos'):
+        l=elem.split('-')
+        if l[0]=='snapshot':
+            listy1.append(int(l[1]))
+            listy2.append(elem)
+            listy3.append(os.stat('/Users/Pranavtadepalli/Documents/Website2/photos/'+elem).st_mtime)
+    try:
+        os.remove('/Users/Pranavtadepalli/Documents/Website2/photos/'+listy2[listy3.index(min(listy3))])
+    except:
+        pass
+    listy2.pop(listy3.index(min(listy3)))
+    print(listy2)
+    os.rename('/Users/Pranavtadepalli/Documents/Website2/photos/'+listy2[0],'/Users/Pranavtadepalli/Documents/Website2/photos/snapshot-0-.jpg')
+    time.sleep(30)
+        

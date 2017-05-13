@@ -1,0 +1,29 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Sat Mar  4 10:58:08 2017
+
+@author: Pranavtadepalli
+"""
+from random import choice
+import webbrowser
+listy=open("catogories1.txt",'r').read()
+listy=listy.split('\n')
+abc=list('wertyuiopasdfghjklcvbnm')
+fin2=[choice(abc),choice(abc),choice(abc),choice(abc),choice(abc)]
+while len(set(fin2))!=5:    
+    fin2=[choice(abc),choice(abc),choice(abc),choice(abc),choice(abc)]
+fin1=[' ',listy.pop(listy.index(choice(listy))),listy.pop(listy.index(choice(listy))),listy.pop(listy.index(choice(listy))),listy.pop(listy.index(choice(listy))),listy.pop(listy.index(choice(listy)))]
+
+
+file=open('science.csv','w')
+file.write(','.join(fin1))
+
+for elem in fin2:
+    file.write('\n')
+    file.write(elem+',')
+file.close()
+import os
+os.system("open /Users/Pranavtadepalli/PythonStuff/science.csv")
+
+webbrowser.open('/Users/Pranavtadepalli/PythonStuff/science.csv')

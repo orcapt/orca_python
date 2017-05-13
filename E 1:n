@@ -1,0 +1,32 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Mon Feb 13 07:57:11 2017
+
+@author: Pranavtadepalli
+"""
+
+from decimal import Decimal
+h=[]
+loopy=[]
+loop=-1
+for number in range(1,1000):
+
+    dec=str(Decimal(1/number))[0:17]
+    dec=str(dec)[2:]
+    if len(dec)<4:
+        pass
+    else:
+        t=[]
+        for elem in range(1,len(dec)):
+            if len(dec.split(dec[elem:]))==2:
+                if dec.split(dec[elem:])[1]!='':
+                    #print(dec,number,dec.split(dec[elem:])[1])
+                    t.append(dec.split(dec[elem:])[1])
+        try:
+            h.append(str(min(t)))
+            loopy.append(number)
+        except:
+            pass
+print(h)
+print(loopy[h.index(max(h))])
