@@ -10,12 +10,12 @@ import numpy as np
 import matplotlib.pyplot as plt
 import time
 import sys
-row1=[2,0,0,0,0,0]
-row2=[0,1,0,0,0,0]
-row3=[0,0,1,0,0,0]
-row4=[0,0,0,1,0,0]
-row5=[0,0,0,0,1,0]
-row6=[0,0,0,0,0,2]
+row1=[0,0,0,0,0,0]
+row2=[0,0,0,0,0,0]
+row3=[0,0,0,0,0,0]
+row4=[0,0,0,0,0,0]
+row5=[0,0,0,0,0,0]
+row6=[0,0,0,0,0,0]
 
 def decide(gameboard):
     y=-1
@@ -42,7 +42,7 @@ def decide(gameboard):
 
                                     ea=0
                                     e1a=0
-                                    for q in range(3):e1
+                                    for q in range(3):
                                         ea=e+ea
                                         e1a=e1+e1a
                                         new=gameboard[ea+elem][e1a+y]
